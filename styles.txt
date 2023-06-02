@@ -18,9 +18,9 @@ espresso
 zenburn
 kate
 monochrome
-breezedark
 haddock
 dracula
+monokai
 nord
 oblivion
 printing

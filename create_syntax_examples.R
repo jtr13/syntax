@@ -1,9 +1,10 @@
+# note: generated .qmd and .html files are in .gitignore, .png files cannot be
+
 # create directory for generated files
 
 if (!file.exists("generated")) dir.create("generated")
 
 styles <- readLines("styles.txt")
-# (mokokai doesn't work)
 
 # create files
 create_qmd <- function(style_name) {
@@ -15,16 +16,13 @@ create_qmd <- function(style_name) {
 # create .qmd files
 lapply(styles, create_qmd)
 
-# render .qmd files
+# render .qmd files 
 quarto::quarto_render("generated/*.qmd")
 
 # crop and save as png
-files <- list.files("generated", "*.html")
-
-# note: if you change the code in template.qmd, you may need to
-# adjust vwidth 
-webshot::webshot(paste0("generated/", files), 
-                 file = paste0("generated/", "webshot.png"),
+# note: if you change the code in template.qmd, you may need to adjust vwidth 
+webshot::webshot(paste0("generated/", styles, ".html"), 
+                 file = paste0("generated/", styles, ".png"),
                  selector = ".cell", zoom = 4, vwidth = 415)
 
 # create README
@@ -37,3 +35,4 @@ writeLines(c("# Quarto syntax highlighting examples", "",
              "code in `create_syntax_examples.R`", "",
              unlist(lapply(list.files("generated", "*.png"), add_image))),
            "README.md")
+
