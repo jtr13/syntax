@@ -1,0 +1,21 @@
+---
+format:
+  html:
+    highlight-style: placeholder
+    embed-resources: true
+execute:
+  eval: false
+---
+
+```{r}
+# placeholder
+library(ggplot2)
+finches <- Sleuth3::case0201
+ggplot(finches, aes(x = Depth, y = after_stat(density))) +
+  geom_histogram(bins = 20, color = "#80593D", fill = "#9FC29F", alpha = .5) +
+  geom_density(color = "#3D6480", lwd = 1) +
+  facet_wrap(~Year) +
+  labs(title = "Beak Depth Density of Galapagos Finches",
+       x = "Beak Depth (mm)", caption = "Source: Sleuth3::case0201") +
+  theme_grey(13)
+```
