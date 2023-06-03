@@ -4,3 +4,4 @@
 .Ruserdata
 generated/*.qmd
 generated/*.html
+.DS_Store
