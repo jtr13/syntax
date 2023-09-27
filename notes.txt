@@ -1,0 +1,2 @@
+Default Bootstrap monospace font: 
+https://getbootstrap.com/docs/5.0/utilities/text/#variables
