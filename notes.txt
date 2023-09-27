@@ -1,2 +1,10 @@
 Default Bootstrap monospace font: 
 https://getbootstrap.com/docs/5.0/utilities/text/#variables
+
+It's very hard to copy and paste HTML code to Keynote while preserving syntax highlighting and font face. 
+Not using reprex venue = rtf because the syntax highlighting is really different from Quarto/revealjs and I don't even think it's possible to replice my custom theme (joyce.theme).
+
+What does work:
+
+- Need to use copy all, therefore only use echo: true (and potentially eval: true) for the chunk you're working with
+- Paste to Keynote, change font to "Menlo" and size to 50 or whatever works (Creating a style to do this sort of works but changes the bold to regular in some lines, very annoying)
